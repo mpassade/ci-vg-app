@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Call of Duty: Modern Warfare",
+        "description": "Call of Duty: Modern Warfare is a first-person shooter video game that takes place in a realistic and modern setting. The campaign follows a CIA officer and British SAS forces as they team up with rebels from the fictional country of Urzikstan, combating together against Russian forces who have invaded the country.",
+        "yearReleased": 2019,
+        "playtime": 4,
+        "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/CallofDutyModernWarfare%282019%29.jpg",
+        "timestamp": "Monday, June 22nd 2020, 2:00 pm"
+    },
+    {
+        "title": "NBA 2K20",
+        "description": "NBA 2K20 is a basketball simulation video game based on the National Basketball Association (NBA).",
+        "yearReleased": 2019,
+        "playtime": 8,
+        "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/NBA_2K20_cover.png",
+        "timestamp": "Sunday, June 21st 2020, 12:49 pm"
+    },
+    {
+        "title": "Fight Night Champion",
+        "description": "Fight Night Champion is a boxing video game. The story follows the career of Andre Bishop, a talented boxer, who is forced to overcome great setbacks including a prison sentence and a corrupt fight promoter.",
+        "yearReleased": 2011,
+        "playtime": 2,
+        "image": "https://upload.wikimedia.org/wikipedia/en/3/34/Fight_Night_Champion.jpg",
+        "timestamp": "Saturday, June 20th 2020, 1:09 am"
+    },
+    {
+        "title": "Halo 3",
+        "description": "Halo 3 is a first-person shooter game that centers on the interstellar war between twenty-sixth century humanity, a collection of alien races known as the Covenant, and the alien parasite Flood.",
+        "yearReleased": 2007,
+        "playtime": 5,
+        "image": "https://upload.wikimedia.org/wikipedia/en/b/b4/Halo_3_final_boxshot.JPG",
+        "timestamp": "Friday, June 19th 2020, 10:32 pm"
+    }
+]

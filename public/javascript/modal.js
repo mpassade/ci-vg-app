@@ -1,0 +1,30 @@
+const gameTitle = document.querySelectorAll('.game-img')
+// const gameImg = document.querySelectorAll('.create-resume')
+// const modal = document.querySelector('.modal')
+
+
+
+// const attachModalListeners= function(modalElm) {
+//     modalElm.querySelector('.overlay').addEventListener('click', toggleModal)
+// }
+
+// const detachModalListeners = function(modalElm) {
+//     modalElm.querySelector('.overlay').removeEventListener('click', toggleModal)
+// }
+
+const toggleModal = function() {
+    console.log('Yeaaa!')
+//     const currentState = modal.style.display
+
+//   // If modal is visible, hide it. Else, display it.
+//     if (currentState === 'none') {
+//     modal.style.display = 'block'
+//     attachModalListeners(modal)
+//     buildResume()
+//     } else {
+//     modal.style.display = 'none'
+//     detachModalListeners(modal)
+//     clearResume()
+//     }
+}
+

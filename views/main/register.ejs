@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partial/head.ejs') %> 
+    <title>Register</title>
+</head>
+<body>
+    <div id="register-container">
+        <header id="register-header">Register</header>
+        <% if (errors.length) { %>
+            <p class="errors"><%=errors%></p>
+        <% } %>
+        <form action="/api/v1/vg-app/register" method="POST">
+            <div class="form-inputs">
+                <input type="text" class="inputs" name="name" placeholder="Name">
+                <input type="email" class="inputs" name="email" placeholder="Email">
+                <input type="text" class="inputs" name="username" placeholder="Username">
+                <input type="password" class="inputs" name="password" placeholder="Password">
+                <input type="password" class="inputs" name="adminSecret" placeholder="Admin Secret">
+            </div>
+            <div class="form-btns">
+                <button id="register-btn" type="submit">Register</button>
+                <span><a href="/api/v1/vg-app/login" id="login-link">Already have an account? Login here</a></span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

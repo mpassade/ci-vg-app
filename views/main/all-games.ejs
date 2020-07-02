@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partial/head.ejs') %> 
+    <title>All Games</title>
+</head>
+<body>
+    <div class="app">
+
+    </div>
+    <header class="games-header">All Games</header>
+    <p class="user-txt">
+        Logged in as: <%= user.name %>
+    </p>
+    <p class="links-container">
+        <a class="links" href="/api/v1/vg-app/logout">Logout</a> |
+        <a class="links" href="/api/v1/vg-app/favorites">Favorites</a>
+        <% if (user.admin===true) { %>
+            | <a class="links" href="/api/v1/vg-app/add-game">Create Game</a>
+        <% } %>
+    </p>
+    <div class="games">
+        <% for( let i = 0; i < games.length; i++ ) { %>
+            <div class="game">
+                <header onclick="toggleModal()" class="game-title"><%=games[i].title%></header>
+                <img class="game-img" src=<%=games[i].image%> onclick="toggleModal()">
+            </div>
+        <% } %>
+    </div>
+    <div class="modal" style="display: none">
+        <div class="overlay"></div>
+        <div class="modal_content"></div>
+    </div>
+    <%- include('../partial/script.ejs') %> 
+</body>
+</html>
