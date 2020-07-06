@@ -15,7 +15,14 @@ body {
   margin: auto;
   margin-top: 100px;
 }
-#login-header, #register-header {
+#add-game-container {
+  height: 600px;
+  width: 600px;
+  background-color: #EAEAEA;
+  margin: auto;
+  margin-top: 70px;
+}
+#login-header, #register-header, #add-game-header {
   text-align: center;
   font-weight: bold;
   font-size: 36px;
@@ -31,6 +38,10 @@ body {
 .inputs {
   margin-bottom: 25px;
   height: 45px;
+  font-size: 24px;
+}
+#desc-txt {
+  resize: none;
 }
 ::-webkit-input-placeholder {
   font-size: 20px;
@@ -57,6 +68,14 @@ body {
   font-size: 20px;
   border: 1px solid black;
 }
+#create-btn {
+  height: 40px;
+  width: 200px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border: 1px solid black;
+}
 #register-link, #login-link {
   text-decoration: none;
   color: #13A3B8;
@@ -68,7 +87,10 @@ body {
   font-size: 16px;
   margin-top: 20px;
 }
-.games-header {
+#error {
+  font-size: 20px;
+}
+.games-header, .favorites-header {
   text-align: center;
   font-size: 50px;
   color: white;
@@ -95,6 +117,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
 }
 .game {
   margin: 100px;
@@ -103,7 +126,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: s;
+  justify-content: space-between;
 }
 .game-title {
   text-align: center;
@@ -115,3 +138,56 @@ body {
   width: 400px;
   margin: auto;
 }
+.game-links {
+  text-decoration: none;
+}
+.single-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.single-game-title {
+  font-size: 50px;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.single-game-img {
+  height: 500px;
+  width: 400px;
+  margin: auto;
+}
+.game-sub-container {
+  display: grid;
+  grid-template-columns: 450px 350px;
+  height: 500px;
+  width: 800px;
+}
+.single-game-txt {
+  color: white;
+  font-size: 20px;
+  margin-top: 0;
+}
+.game-keys {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 22px;
+}
+.game-sub-sub-container {
+  overflow: scroll;
+}
+.favorites {
+  text-decoration: none;
+}
+.favorites-add, .favorites-remove {
+  font-size: 20px;
+  font-weight: bold;
+  color: yellow;
+}
+.delete-game {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  text-decoration: none;
+}
+

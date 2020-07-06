@@ -1,4 +1,5 @@
 const User = require('../models/userModel')
+const Game = require('../models/gameModel')
 
 module.exports = {
     validateRegistrationInput: (req, res, next) => {
@@ -17,6 +18,26 @@ module.exports = {
             return res.redirect('/api/v1/vg-app/login')
         }
         next()
+    },
+
+    validateAddGameInput: (req, res, next) => {
+        const {title, year, playtime, image, description} = req.body
+        if (!title || !year || !playtime || !image || !description){
+            req.flash('errors', 'All fields are required')
+            return res.redirect('/api/v1/vg-app/add-game')
+        }
+        next()
+    },
+
+    duplicateGameCheck: (req, res, next) => {
+        Game.findOne({title: req.body.title})
+        .then(game => {
+            if(game){
+                req.flash('errors', 'A game with that title already exists')
+                return res.redirect('/api/v1/vg-app/add-game')
+            }
+            next()
+        }).catch(() => res.status(400).send('Server Error'))
     },
 
     passwordCheck: (req, res, next) => {

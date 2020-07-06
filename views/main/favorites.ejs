@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partial/head.ejs') %> 
+    <title>Favorites</title>
+</head>
+<body>
+    <header class="favorites-header">Favorites</header>
+    <p class="user-txt">
+        Logged in as: <%= user.name %>
+    </p>
+    <p class="links-container">
+        <a class="links" href="/api/v1/vg-app/logout">Logout</a> |
+        <a class="links" href="/api/v1/vg-app/all-games">All Games</a>
+        <% if (user.admin===true) { %>
+            | <a class="links" href="/api/v1/vg-app/add-game">Create Game</a>
+        <% } %>
+    </p>
+    <div class="games">
+        <% for( let i = 0; i < games.length; i++ ) { %>
+            <% if (user.favorites.includes(games[i].title)) { %>
+                <div class="game">
+                    <a class="game-links" href="/api/v1/vg-app/game/<%=games[i].title%>"><header class="game-title"><%=games[i].title%></header></a>
+                    <a class="game-links" href="/api/v1/vg-app/game/<%=games[i].title%>"><img class="game-img" src=<%=games[i].image%>></a>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+</body>
+</html>

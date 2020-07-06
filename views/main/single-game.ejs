@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partial/head.ejs') %> 
+    <title><%=singleGame.title%></title>
+</head>
+<body>
+    <p class="user-txt">
+        Logged in as: <%= user.name %>
+    </p>
+    <p class="links-container">
+        <a class="links" href="/api/v1/vg-app/logout">Logout</a> |
+        <a class="links" href="/api/v1/vg-app/favorites">Favorites</a> |
+        <a class="links" href="/api/v1/vg-app/all-games">All Games</a>
+        <% if (user.admin===true) { %>
+            | <a class="links" href="/api/v1/vg-app/add-game">Create Game</a>
+        <% } %>
+    </p>
+    <div class="single-game">
+        <header class="single-game-title"><%=singleGame.title%></header>
+        <div class="game-sub-container">
+            <img class="single-game-img" src=<%=singleGame.image%>>
+            <div class="game-sub-sub-container">
+                <p class="single-game-txt"><span class="game-keys">Description:</span> <%=singleGame.description%></p>
+                <p class="single-game-txt"><span class="game-keys">Year Released:</span> <%=singleGame.yearReleased%></p>
+                <p class="single-game-txt"><span class="game-keys">Time Played:</span> <%=singleGame.playtime%> Hours</p>
+                <% if (user.favorites.includes(singleGame.title)) { %>
+                    <a class="favorites" href="/api/v1/vg-app/remove-favorite/<%=singleGame.title%>">
+                    <span class="favorites-remove">Remove from Favorites</span>
+                    </a>
+                <% } else {%>
+                    <a class="favorites" href="/api/v1/vg-app/add-favorite/<%=singleGame.title%>">
+                    <span class="favorites-add">Add to Favorites</span>
+                    </a>
+                <% } %>
+                <% if (user.admin) { %>
+                    <p><a class="delete-game" href="/api/v1/vg-app/delete-game/<%=singleGame.title%>">
+                        Delete Game
+                    </a></p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
